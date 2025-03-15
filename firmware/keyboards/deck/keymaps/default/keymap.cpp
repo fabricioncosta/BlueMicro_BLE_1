@@ -238,7 +238,7 @@ uint32_t layer0_left[MATRIX_ROWS][MATRIX_COLS] =
 
 void encoder_callback(int step)
 {
-  if ( step > 0 )
+  if ( step < 0 )
   {
     KeyScanner::add_to_encoderKeys(KC_AUDIO_VOL_UP);
   }else
