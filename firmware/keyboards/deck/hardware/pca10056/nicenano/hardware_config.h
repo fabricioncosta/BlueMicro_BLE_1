@@ -26,22 +26,22 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 /* key matrix size */
 
 /*
-LROW0:          D2	P0.17 	_PINNUM(0, 17)
-LROW1:          D3  	P0.20 	_PINNUM(0, 20)
-LROW2:          D4  	P0.22 	_PINNUM(0, 22)
-LROW3:          D5  	P0.24 	_PINNUM(0, 24)
-LENDC1_A:       D16	P0.10 	_PINNUM(0, 10)	
-LENC1_B:        D7	P0.11   _PINNUM(0, 11)
-LDATA_LED:      D9	P1.06   _PINNUM(1, 016)
-VDD_LED:        3P3	P0.13   _PINNUM(0, 13)
-LCOL0 		D21   	P0.31   _PINNUM(0, 31)
-LCOL1 		D20     P0.29   _PINNUM(0, 29)
-LCOL2 		D19     P0.02   _PINNUM(0, 02)
-LCOL3 		D18     P1.15   _PINNUM(1, 15)
-LCOL4 		D15     P1.13   _PINNUM(1, 13)
-LCOL5 		D14     P1.11   _PINNUM(1, 11)
-LSDA 		D16	P0.10   _PINNUM(0, 10)
-LSC 		D10	P0.09   _PINNUM(0, 09)
+LROW0:          D2  P0.17     _PINNUM(0, 17)
+LROW1:          D3       P0.20     _PINNUM(0, 20)
+LROW2:          D4       P0.22     _PINNUM(0, 22)
+LROW3:          D5       P0.24     _PINNUM(0, 24)
+LENDC1_A:       D16 P0.10     _PINNUM(0, 10) 
+LENC1_B:        D7  P0.11   _PINNUM(0, 11)
+LDATA_LED:      D9  P1.06   _PINNUM(1, 016)
+VDD_LED:        3P3 P0.13   _PINNUM(0, 13)
+LCOL0          D21       P0.31   _PINNUM(0, 31)
+LCOL1          D20     P0.29   _PINNUM(0, 29)
+LCOL2          D19     P0.02   _PINNUM(0, 02)
+LCOL3          D18     P1.15   _PINNUM(1, 15)
+LCOL4          D15     P1.13   _PINNUM(1, 13)
+LCOL5          D14     P1.11   _PINNUM(1, 11)
+LSDA           D16  P0.10   _PINNUM(0, 10)
+LSC       D10  P0.09   _PINNUM(0, 09)
 */
 
 
@@ -62,6 +62,15 @@ LSC 		D10	P0.09   _PINNUM(0, 09)
 #define VCC_POLARITY_ON 0
 #define STATUS_BLE_LED_PIN 0  //no blue led
 #define  STATUS_KB_LED_PIN 0  //no RED LED
+
+#define ENCODER_A_PIN  _PINNUM(1, 0) 
+#define ENCODER_B_PIN  _PINNUM(0, 11)
+#define ENCODER_PAD_A   ENCODER_A_PIN
+#define ENCODER_PAD_B  ENCODER_B_PIN 
+
+#define ENCODER_RESOLUTION 2  
+
+
 #define ARDUINO_NICE_NANO 1 // used in debug_cli.cpp to bypass 0.14 and 0.16 that are directly connected to 0.18 (reset)
 
           

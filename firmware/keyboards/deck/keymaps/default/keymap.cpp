@@ -16,6 +16,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 */
 #include "keymap.h"
+#include "RotaryEncoder.h"
 
 // Initialize matrix with nothing...
 std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
@@ -28,6 +29,13 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
 
 
 void setupKeymap() {
+
+
+      // Code below makes sure that the encoder gets configured.  
+  RotaryEncoder.begin(ENCODER_PAD_A, ENCODER_PAD_B);    // Initialize Encoder
+  RotaryEncoder.setCallback(encoder_callback);    // Set callback
+  RotaryEncoder.start();    // Start encoder
+    
 
    // no layers for single keymap
    // this is a keymap that's used for testing that each key is responding properly to key presses
@@ -58,7 +66,7 @@ uint32_t layer0_left[MATRIX_ROWS][MATRIX_COLS] =
         PRINT_BLE,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,
         KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G, 
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, 
-        KC_LCTL, KC_LGUI, KC_LALT, LAYER_3, LAYER_1, KC_SPC
+        KC_NO, KC_NO, KC_NO, LAYER_3, KC_SPC, KC_BSPACE
     );
 
  /* Qwerty RIGHT
@@ -73,13 +81,15 @@ uint32_t layer0_left[MATRIX_ROWS][MATRIX_COLS] =
  *        `-----------------------------------------'
  */
 
-uint32_t layer0_right[MATRIX_ROWS][MATRIX_COLS] =
+
+    uint32_t layer0_right[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
          KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,      PRINT_BLE, 
          KC_H,    KC_J,    KC_K,    KC_L,    KC_SCOLON, KC_QUOTE,
          KC_N,    KC_M,    KC_COMMA,KC_DOT,  KC_SLSH,   KC_ENT,
-         KC_SPC,  LAYER_2, KC_LEFT, KC_UP,   KC_DOWN,   KC_RIGHT
+         LAYER_2,  KC_SPC, KC_LEFT, KC_NO,   KC_NO,   KC_NO
     );
+
 
 
 
@@ -223,6 +233,18 @@ uint32_t layer0_right[MATRIX_ROWS][MATRIX_COLS] =
 
         }
     }
+}
+
+
+void encoder_callback(int step)
+{
+  if ( step > 0 )
+  {
+    KeyScanner::add_to_encoderKeys(KC_AUDIO_VOL_UP);
+  }else
+  {
+    KeyScanner::add_to_encoderKeys(KC_AUDIO_VOL_DOWN);
+  }  
 }
 
 
