@@ -17,18 +17,18 @@ jobs:
         # Only 1 keyboard is supported.  For more keyboards, copy and rename this file.
         keyboard: ['deck']
         # Keymap of the keyboard to setup.  Multiple keymaps can be setup following this example: ['default','jpconstantineau']
-        keymap: ['base']
+        keymap: ['default']
         # keyboard configuration. Multiple configs can be setup following this example: ['left','right']
         keyboard_config: ['left', 'right']
         # hardware configuration. must have both components of the path in the BlueMicro_BLE keyboard examples path
-        hardware_config: ['deck']
+        hardware_config: ['nicenano']
         # Available options
         # feather52832 - use this for most nRF52832 based boards (needs Arduino_nRF52_Bootloader)
         # bluemicro_nrf52840
         # bluemacro_nrf52840
         # nice_nano
         # pca10056 - use this for all other nRF52840 based boards not listed above (needs Arduino_nRF52_Bootloader)
-        compile_with: ['nice_nano']
+        compile_with: ['pca10056']
 
     # you shouldn't need to edit anything below
     steps:
