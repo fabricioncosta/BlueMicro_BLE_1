@@ -56,39 +56,40 @@ void setupKeymap() {
 
 
  uint32_t layer1_left[MATRIX_ROWS][MATRIX_COLS] =
- KEYMAP(
-     KC_ESC,                   KC_F1,                  KC_F2,                    KC_F3,                   KC_F4,                    KC_F5,
-     KC_NO,    MOD(MOD_LSHIFT, KC_1),  MOD(MOD_LSHIFT, KC_2),    MOD(MOD_LSHIFT, KC_3),   MOD(MOD_LSHIFT, KC_4),    MOD(MOD_LSHIFT, KC_5), 
-     KC_NO,                    KC_NO,                  KC_NO,                    KC_NO,                   KC_NO,                    KC_NO, 
-     KC_NO,                    KC_NO,                  KC_NO,                  LAYER_1,                KC_LCTRL,                KC_BSPACE
+ KEYMAP(     
+                      KC_GRV,                     KC_1,                   KC_2,                     KC_3,                    KC_4,                     KC_5, 
+     MOD(MOD_LSHIFT, KC_GRV),    MOD(MOD_LSHIFT, KC_1),  MOD(MOD_LSHIFT, KC_2),    MOD(MOD_LSHIFT, KC_3),   MOD(MOD_LSHIFT, KC_4),    MOD(MOD_LSHIFT, KC_5), 
+                      KC_ESC,                    KC_F1,                  KC_F2,                    KC_F3,                   KC_F4,                    KC_F5,
+                       KC_NO,                    KC_NO,                  KC_NO,                  LAYER_1,                KC_LCTRL,                KC_BSPACE
  );
 
 uint32_t layer1_right[MATRIX_ROWS][MATRIX_COLS] =
  KEYMAP(
-                    KC_F6,                    KC_F7,                  KC_F8,                    KC_F9,                  KC_F10,                       KC_F11,
+                     KC_6,                     KC_7,                   KC_8,                     KC_9,                   KC_0,                      KC_MINUS,                     
     MOD(MOD_LSHIFT, KC_6),    MOD(MOD_LSHIFT, KC_7),  MOD(MOD_LSHIFT, KC_8),    MOD(MOD_LSHIFT, KC_9),   MOD(MOD_LSHIFT, KC_0),    MOD(MOD_LSHIFT, KC_MINUS), 
-                    KC_NO,                    KC_NO,                  KC_NO,                    KC_NO,                   KC_NO,                        KC_NO, 
+                    KC_F6,                    KC_F7,                  KC_F8,                    KC_F9,                  KC_F10,                       KC_F11,
                  KC_ENTER,                   KC_SPC,                LAYER_2,                    KC_NO,                   KC_NO,                        KC_NO
  );
 
 
-
-
  uint32_t layer2_left[MATRIX_ROWS][MATRIX_COLS] =
- KEYMAP(
-     KC_ESC,                   KC_F1,                  KC_F2,                    KC_F3,                   KC_F4,                    KC_F5,
-     KC_NO,    MOD(MOD_LSHIFT, KC_1),  MOD(MOD_LSHIFT, KC_2),    MOD(MOD_LSHIFT, KC_3),   MOD(MOD_LSHIFT, KC_4),    MOD(MOD_LSHIFT, KC_5), 
-     KC_NO,                    KC_NO,                  KC_NO,                    KC_NO,                   KC_NO,                    KC_NO, 
-     KC_NO,                    KC_NO,                  KC_NO,                  LAYER_1,                KC_LCTRL,                KC_BSPACE
+ KEYMAP(     
+      KC_NO,            KC_7,      KC_8,    KC_9,                   KC_LBRACKET ,                       KC_RBRACKET , 
+      KC_NO,            KC_4,      KC_5,    KC_6,   MOD(MOD_LSHIFT, KC_LBRACKET),       MOD(MOD_LSHIFT, KC_LBRACKET), 
+    KC_LSFT,            KC_1,      KC_2,    KC_3,                          KC_0,                              KC_DOT, 
+      KC_NO,            KC_NO,      KC_NO,  LAYER_1,                     KC_LCTRL,                         KC_BSPACE
  );
 
 uint32_t layer2_right[MATRIX_ROWS][MATRIX_COLS] =
  KEYMAP(
-                    KC_F6,                    KC_F7,                  KC_F8,                    KC_F9,                   KC_F10,                    KC_F11,
-    MOD(MOD_LSHIFT, KC_6),    MOD(MOD_LSHIFT, KC_7),  MOD(MOD_LSHIFT, KC_8),    MOD(MOD_LSHIFT, KC_9),   MOD(MOD_LSHIFT, KC_0),    MOD(MOD_LSHIFT, KC_MINUS), 
-                    KC_NO,                    KC_NO,                  KC_NO,                    KC_NO,                    KC_NO,                     KC_NO, 
-                 KC_ENTER,                   KC_SPC,                LAYER_2,                    KC_NO,                     KC_NO,                     KC_NO
+    KC_NO,                     KC_HOME,                   KC_UP,                     KC_END,                  KC_PGUP,                     KC_NO, 
+    KC_NO,                     KC_LEFT,                 KC_DOWN,                   KC_RIGHT,                KC_PGDOWN,                     KC_NO, 
+    KC_NO,                       KC_NO,                     KC_NO,                    KC_NO,                    KC_NO,                     KC_RSHIFT, 
+ KC_ENTER,                      KC_SPC,                   LAYER_2,                    KC_NO,                    KC_NO,                     KC_NO
  );
+
+
+
 
 
 
